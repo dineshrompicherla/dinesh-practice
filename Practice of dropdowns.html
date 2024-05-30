@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8" />
+
+<title> Dropdowns </title>
+
+<style>
+
+.dropbtn{
+
+background-color: lightcoral;
+
+color: lightgreen;
+
+padding: 20px;
+
+font-size: 40px;
+
+border: 3px solid skyblue;
+
+cursor: pointer;
+
+}
+
+.dropdown{
+
+position: relative;
+
+display: inline-block;
+
+}
+
+.items{
+
+position: absolute;
+
+background-color: rgb(94, 13, 224);
+
+min-width: 180px;
+
+box-shadow: 0 8px 18px rgb(7, 218, 95);
+
+z-index: 1;
+
+display: none;
+
+}
+
+.items a{
+
+color: rgb(7, 7, 7);
+
+padding: 14px 16px;
+
+text-decoration: none;
+
+display: block;
+
+}
+
+.items a:hover{
+
+background-color: rgb(122, 255, 129);
+
+}
+
+.dropdown:hover .items{
+
+display: block;
+
+}
+
+.dropdown:hover .dropbtn{
+
+background-color: rgb(243, 23, 23);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1> Drop-downs </h1>
+
+<div class="dropdown">
+
+<button class="dropbtn"> groups </button>
+
+<div class="items">
+
+<a href="#"> B.sc </a>
+
+<a href="#"> B.com</a>
+
+<a href="#"> BZC </a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
