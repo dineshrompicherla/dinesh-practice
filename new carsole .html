@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0106)file:///C:/Users/ADMIN/OneDrive/Documents/creating%20first%20project/index.html/html/new%20carsole%20.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image bike Carousel</title>
+    <style>
+        .name{
+            color: rgb(250, 5, 197);
+            font-style: italic;
+            font-size: 20px;
+            font-weight: bold;
+            align-items: center;
+            letter-spacing: 10px;
+            background-color: aqua;
+            animation: bike 4s infinite;
+
+        }
+         @keyframes bike {
+        0% { transform: translateX(20PX); }
+        40% { transform: translateX(100px); }
+        100% { transform: translateX(0); }
+         }
+           
+        
+        .carousel-container {
+          position: relative;
+          width: 950px;
+          height: 500px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          margin: auto;
+        }
+    
+        .bike-image {
+          width: 100%;
+          height: auto;
+          display: none;
+        }
+    
+        .bike-image:first-child {
+          display: block;
+        }
+    button {
+      position: absolute;
+      top: 50%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+    }
+
+    #prevButton {
+      left: 20px;
+    }
+
+    #nextButton {
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+    <div class="name">
+    <h1><ul>MODIFIED BIKES:</ul></h1>
+    </div>
+    <div class="carousel-container">
+        <img src="./new carsole _files/5387109.jpg" alt="Image 1" class="bike-image" style="display: none;">
+        <img src="./new carsole _files/7204777.jpg" alt="Image 2" class="bike-image" style="display: none;">
+        <img src="./new carsole _files/7204819.jpg" alt="Image 3" class="bike-image" style="display: none;">
+        <img src="./new carsole _files/2794331.jpg" alt="Image 4" class="bike-image" style="display: none;">
+        <img src="./new carsole _files/7204798.jpg" alt="Image 5" class="bike-image" style="display: block;">
+        <button id="prevButton">Previous</button>
+        <button id="nextButton">Next</button>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const images = document.querySelectorAll('.bike-image');
+          const totalImages = images.length;
+          let currentIndex = 0;
+    
+          function showImage(index) {
+            for (let i = 0; i < totalImages; i++) {
+              images[i].style.display = 'none';
+            }
+            images[index].style.display = 'block';
+          }
+          document.getElementById('prevButton').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showImage(currentIndex);
+      });
+
+      document.getElementById('nextButton').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showImage(currentIndex);
+      });
+
+      function autoSlide() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showImage(currentIndex);
+      }
+
+      
+
+      showImage(currentIndex);
+    });
+  </script>
+
+</body></html>
